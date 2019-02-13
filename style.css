@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+}
+#canvas{
+    background: #ccc;
+    height: 100vh;
+    position: relative;
+}
+.action{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.eraserdisplay{
+    display: none;
+}
+.action > #brash{
+    display: none;
+}
+.action.x > #brash{
+    display: inline-block;
+}
+.action.x > #eraser{
+    display: none;
+}
