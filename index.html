@@ -6,13 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style.css">
     <title>画板</title>
+    <style type="text/css">
+        .icon {
+           width: 1em; height: 1em;
+           vertical-align: -0.15em;
+           fill: currentColor;
+           overflow: hidden;
+        }
+    </style>
 </head>
 <body>
-    <canvas id="mycanvas" width="900" height="900" style="background: #aaa;"></canvas>
+    <canvas id="mycanvas" style="background: #fff;"></canvas>
     <div id="action" class="action">
-        <button id="eraser">橡皮擦</button>
-        <button id="brash">画笔</button>
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-pen"></use>
+        </svg>
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-Eraser"></use>
+        </svg>
     </div>
     <script src="./main.js"></script>
+    <script src="//at.alicdn.com/t/font_1045081_l6v5slkpfoj.js"></script>   
 </body>
 </html>
