@@ -4,6 +4,7 @@ var lastPoint = {
     "x": undefined,
     "y": undefined
 };
+var lineWidth = 1;
 //动态修改页面视口宽高
 pageSize();
 window.onresize = function() {
@@ -28,7 +29,7 @@ if(document.body.ontouchstart !== undefined){
     canvas.ontouchmove = function(a) {
         var x = a.touches[0].clientX;
         var y = a.touches[0].clientY;
-        console.log(x,y);
+        // console.log(x,y);
         if(usingEraser){
             if(pointing == true){
                 context.clearRect(x-5, y-5, 10, 10);
@@ -91,12 +92,78 @@ if(document.body.ontouchstart !== undefined){
 //     context.fill();
 // }
 
+//颜色选区
+red.onclick = function() {
+    context.fillStyle = "red";
+    context.strokeStyle = "red";
+    red.classList.add("active");
+    blue.classList.remove("active");
+    yellow.classList.remove("active");
+    black.classList.remove("active");
+};
+blue.onclick = function() {
+    context.fillStyle = "blue";
+    context.strokeStyle = "blue";
+    blue.classList.add("active");
+    red.classList.remove("active");
+    yellow.classList.remove("active");
+    black.classList.remove("active");
+}
+yellow.onclick = function() {
+    context.fillStyle = "yellow";
+    context.strokeStyle = "yellow";
+    yellow.classList.add("active");
+    red.classList.remove("active");
+    blue.classList.remove("active");
+    black.classList.remove("active");
+}
+black.onclick = function() {
+    context.fillStyle = "black";
+    context.strokeStyle = "black";
+    black.classList.add("active");
+    red.classList.remove("active");
+    blue.classList.remove("active");
+    yellow.classList.remove("active");
+}
+
+//画笔粗细
+one.onclick = function() {
+    lineWidth = 1;
+}
+two.onclick = function() {
+    lineWidth = 2;
+}
+three.onclick = function() {
+    lineWidth = 3;
+}
+five.onclick = function() {
+    lineWidth = 5;
+}
+seven.onclick = function() {
+    lineWidth = 7;
+}
+
+//清屏
+clear.onclick = function() {
+    context.clearRect(0,0,canvas.width,canvas.height);
+}
+
+//下载画图
+download.onclick = function() {
+    var url = canvas.toDataURL("image/png");
+    var a = document.createElement("a");
+    document.body.appendChild(a);
+    a.href = url;
+    a.download = "mypicture";
+    a.click();
+}
+
 //canvas画线
 function drawLine(x1,y1,x2,y2) {
     context.beginPath();
-    context.strokeStyle = "#000";
+    // context.strokeStyle = "red";
     context.moveTo(x1,y1);
-    context.lineWidth = 2;
+    context.lineWidth = lineWidth;
     context.lineTo(x2,y2);
     context.stroke();
     context.closePath();
@@ -112,11 +179,14 @@ function pageSize() {
 
 //橡皮擦
 var usingEraser = false;
+pen.onclick = function() {
+    usingEraser = false;
+    pen.classList.add("active");
+    eraser.classList.remove("active");
+}
 eraser.onclick = function() {
     usingEraser = true;
-    action.className = "action x";
-};  
-brash.onclick = function() {
-    usingEraser = false;
-    action.className = "action";
+    eraser.classList.add("active");
+    pen.classList.remove("active");
 };
+

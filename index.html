@@ -6,26 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style.css">
     <title>画板</title>
-    <style type="text/css">
-        .icon {
-           width: 1em; height: 1em;
-           vertical-align: -0.15em;
-           fill: currentColor;
-           overflow: hidden;
-        }
-    </style>
 </head>
 <body>
-    <canvas id="mycanvas" style="background: #fff;"></canvas>
+    <canvas id="mycanvas"></canvas>
     <div id="action" class="action">
-        <svg class="icon" aria-hidden="true">
+        <svg id="pen" class="icon active" aria-hidden="true">
             <use xlink:href="#icon-pen"></use>
         </svg>
-        <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-Eraser"></use>
+        <svg id="eraser" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-cityworksjichugongnengtubiao-"></use>
+        </svg>
+        <svg id="clear" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-clear1"></use>
+        </svg>
+        <svg id="download" class="icon" aria-hidden="true">
+            <use xlink:href="#icon-download"></use>
         </svg>
     </div>
+    <ul class="colors">
+        <li id="black" class="black active"></li>
+        <li id="red" class="red"></li>
+        <li id="blue" class="blue"></li>
+        <li id="yellow" class="yellow"></li>  
+    </ul>
+    <ul class="sizes">
+        <li id="one"></li>
+        <li id="two"></li>
+        <li id="three"></li>
+        <li id="five"></li>
+        <li id="seven"></li>
+    </ul>
     <script src="./main.js"></script>
-    <script src="//at.alicdn.com/t/font_1045081_l6v5slkpfoj.js"></script>   
+    <script src="//at.alicdn.com/t/font_1045081_jfzgc789kt.js"></script>   
 </body>
 </html>

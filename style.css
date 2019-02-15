@@ -1,25 +1,100 @@
 body{
-    margin: 0;
+    overflow: hidden;
 }
-#canvas{
-    background: #ccc;
-    height: 100vh;
-    position: relative;
+ul,li{
+    list-style: none;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
+#mycanvas{
+    background: #fff;
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
 }
 .action{
     position: fixed;
     top: 0;
     left: 0;
+    padding:20px;
 }
-.eraserdisplay{
-    display: none;
+.action svg{
+    width: 1.5em;
+    height: 1.5em;
+    transition: all 0.3s;
+    margin: 0 7px;
 }
-.action > #brash{
-    display: none;
+.action svg.active{
+    fill: red;
+    transform: scale(1.2);
 }
-.action.x > #brash{
-    display: inline-block;
+.colors{
+    position: fixed;
+    top: 50px;
+    left: 23px;
 }
-.action.x > #eraser{
-    display: none;
+.colors > li{
+    width: 20px;
+    height: 20px;
+    margin: 15px 0;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0,0,0,0.25);
+    transition: all 0.3s;
+}
+.colors > li.red{
+    background: red;
+}
+.colors > li.blue{
+    background: blue;
+}
+.colors > li.yellow{
+    background: yellow;
+}
+.colors > li.black{
+    background: black;
+}
+.colors > li.active{
+    box-shadow: 0 0 3px rgba(0,0,0,0.9);
+    transform: scale(1.2);
+}
+.sizes{
+    position: fixed;
+    top: 20px;
+    right: 23px;
+}
+.sizes li:nth-child(1){
+    width: 20px;
+    height: 0;
+    border-top: 1px solid black;
+}
+.sizes li:nth-child(2){
+    width: 20px;
+    height: 0;
+    border-top: 2px solid black;
+    margin: 20px 0;
+}
+.sizes li:nth-child(3){
+    width: 20px;
+    height: 0;
+    border-top: 3px solid black;
+}
+.sizes li:nth-child(4){
+    width: 20px;
+    height: 0;
+    border-top: 5px solid black;
+    margin: 20px 0;
+}
+.sizes li:nth-child(5){
+    width: 20px;
+    height: 0;
+    border-top: 7px solid black;
 }
