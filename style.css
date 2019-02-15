@@ -80,7 +80,7 @@ ul,li{
     width: 20px;
     height: 0;
     border-top: 2px solid black;
-    margin: 20px 0;
+    margin: 25px 0;
 }
 .sizes li:nth-child(3){
     width: 20px;
@@ -91,7 +91,7 @@ ul,li{
     width: 20px;
     height: 0;
     border-top: 5px solid black;
-    margin: 20px 0;
+    margin: 25px 0;
 }
 .sizes li:nth-child(5){
     width: 20px;
